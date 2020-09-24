@@ -1,0 +1,2 @@
+module MovieboxesHelper
+end

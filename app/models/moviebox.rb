@@ -1,0 +1,2 @@
+class Moviebox < ApplicationRecord
+end

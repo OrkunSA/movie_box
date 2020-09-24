@@ -1,0 +1,2 @@
+class MovieboxesController < ApplicationController
+end
