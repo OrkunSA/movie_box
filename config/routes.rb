@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
+  resources :users do 
+    resources :movieboxes 
+    resources :movies, only: [:index]
+  end
   
   resources :movieboxes
-  resources :users
   resources :movies
   resources :movie_genres
   resources :listings
