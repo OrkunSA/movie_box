@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   end
   
   resources :movieboxes
-  resources :movies
-  resources :movie_genres
-  resources :listings
-  resources :genres
+  resources :listings, only: [:destroy]
+  resources :movies do 
+    resources :listings, except: [:index, :destroy]
+  end
+
+  resources :genres, only: [:index, :show]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
