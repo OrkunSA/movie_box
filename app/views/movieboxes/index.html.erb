@@ -1,0 +1,38 @@
+<% content_for :header do %>
+  <h1><%= current_user.username %>'s MovieBoxes!</h1>
+<% end %>
+
+<% content_for :vertical_nav do %>
+  <ul class="nav flex-column">
+    <li class="nav-item mb-3">
+      <%= button_to "Create a new MovieBox", new_user_moviebox_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
+    </li>
+    <li class="nav-item mb-3">
+      <%= button_to "Add a Movie", movies_path, :method => "get", class: "btn btn-info btn-block" %>
+    </li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <% if @movieboxes.count == 0 %>
+    <p><center>You don't have any movieboxes! <%= link_to "Create One", new_user_moviebox_path(current_user) %> to start adding movies!</center></p>
+  <% else %>
+    <% @movieboxes.each do |moviebox| %>
+      <div class="card border-info mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to moviebox.name, user_moviebox_path(current_user, moviebox) %></h5>
+          <p class="card-text"><%= moviebox.description %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% content_for :sidebar do %>
+  <p>Favorite Movies</p>
+  <% @favorites.each do |show| %>
+    <p> <%= link_to movie.title, movie_path(movie) %></p>
+  <% end %>
+  <%= button_to "See All of My Movies", user_movies_path(current_user), :method => "get", class: "btn btn-info" %>
+<% end %>
+
