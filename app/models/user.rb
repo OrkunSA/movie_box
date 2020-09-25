@@ -5,4 +5,9 @@ class User < ApplicationRecord
 
     
     has_secure_password
+
+    def favorite_shows
+        # List the user's shows where fav is true
+        self.movies.includes(:listings).where(:listings => { favorite: true }).uniq
+    end
 end
