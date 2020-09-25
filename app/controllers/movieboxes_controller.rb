@@ -64,8 +64,6 @@ class MovieboxesController < ApplicationController
     end
 
     def set_user 
-        @user = User.find_by(id: params[:user_id]
-    end)
-
-
+        @user = User.find_by(id: params[:user_id])
+    end
 end
