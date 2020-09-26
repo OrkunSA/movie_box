@@ -1,0 +1,13 @@
+<% listings.each do |listing| %>
+  <div class="card card-sm mb-3">
+    <h5 class="card-header"><%= link_to listing.moviebox.name, user_moviebox_path(current_user, listing.moviebox) %></h5>
+    <div class="card-body">
+      <p><strong>Your Status</strong>:<br>
+        <%= listing.user_status %><br>
+      <%= button_to "Edit Moviebox Details", edit_movie_listing_path(movie, listing), :method => "get", class: "btn btn-warning btn-sm btn-block" %>
+      <%= form_for listing, method: :delete do |f| %>
+        <%= f.submit "Remove From Moviebox", class:"btn btn-sm btn-danger btn-block" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
