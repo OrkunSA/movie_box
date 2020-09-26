@@ -22,8 +22,8 @@ class SessionsController < ApplicationController
 
     def destroy
       if logged_in?
-      session.delete :user_id
-      redirect_to controller: 'pages', action: 'home'
+      session.clear
+      redirect_to '/'
       end
     end
     
