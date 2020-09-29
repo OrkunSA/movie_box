@@ -1,13 +1,13 @@
 <% content_for :vertical_nav do %>
   <ul class="nav flex-column">
     <li class="nav-item mb-3">
-      <%= button_to "Back to Movies", movies_path, :method => "get", class: "btn btn-info btn-block" %>
+      <%= button_to "Back to Movies", movies_path, :method => "get", class: "btn btn-dark btn-block" %>
     </li>
       <li class="nav-item mb-3">
-        <%= button_to "Update movie details", edit_movie_path(@movie), :method => "get", class: "btn btn-info btn-block" %>
+        <%= button_to "Update movie details", edit_movie_path(@movie), :method => "get", class: "btn btn-dark btn-block" %>
       </li>
     <li class="nav-item">
-      <%= button_to "Add to A MovieBox", new_movie_listing_path(@movie), :method => "get", class: "btn btn-info btn-block" %>
+      <%= button_to "Add to A MovieBox", new_movie_listing_path(@movie), :method => "get", class: "btn btn-dark btn-block" %>
     </li>
   </ul>
 <% end %>
