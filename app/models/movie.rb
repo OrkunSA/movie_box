@@ -5,6 +5,9 @@ class Movie < ApplicationRecord
     has_many :movie_genres
     has_many :genres, through: :movie_genres
 
+    validates :title, presence: true
+    validates :description, presence: true
+
     def genres_attributes=(genre_attributes)
         genre_name = genre_attributes["0"]["name"]
         unless genre_name.blank?

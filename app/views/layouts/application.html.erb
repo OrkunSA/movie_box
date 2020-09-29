@@ -8,19 +8,32 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+   <style>
+body  {
+  background-image: url(/assets/4JlpQn.jpg/);
+  
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  display: block;
+  text-align: center;
+  display: block;
+  color: black;
+  height: 100vh;
+  
+}
+</style>
 
   <body>
     <%= render partial: "shared/navbar" %>
     <%= render partial: "shared/alerts" %>
-    <div class="m-2">
-      <%= yield :header %>
-      <div class="row mt-4">
+
+      <div class="row mt-5">
         <div class="col-2">
           <%= yield :vertical_nav %>
         </div>
-        <div class="col-8">
+        <div class="container mt-4">
           <%= yield :content %>
-        </div>
+          </div>
         <div class="col-2">
           <%= yield :sidebar %>
         </div>

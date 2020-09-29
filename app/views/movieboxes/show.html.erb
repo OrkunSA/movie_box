@@ -1,7 +1,4 @@
-<% content_for :header do %>
-  <h1><%= @moviebox.name %></h1>
-  <p><em><%= @moviebox.description %></em></p>
-<% end %>
+
 
 <% content_for :vertical_nav do %>
   <ul class="nav flex-column">
@@ -9,10 +6,10 @@
       <%= button_to "Edit this Moviebox", edit_user_moviebox_path(current_user, @moviebox), :method => "get", class: "btn btn-warning btn-block" %>
     </li>
     <li class="nav-item mb-3">
-      <%= button_to "Back to All Movieboxes", user_movieboxes_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
+      <%= button_to "Back to All Movieboxes", user_movieboxes_path(current_user), :method => "get", class: "btn btn-dark btn-block" %>
     </li>
     <li class="nav-item">
-      <%= button_to "Add Movies", movies_path, :method => "get", class: "btn btn-info btn-block" %>
+      <%= button_to "Add Movies", movies_path, :method => "get", class: "btn btn-dark btn-block" %>
     </li>
   </ul>
 <% end %>

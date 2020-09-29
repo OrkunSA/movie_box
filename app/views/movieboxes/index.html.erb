@@ -1,38 +1,48 @@
-<% content_for :header do %>
-  <h1><%= current_user.username %>'s MovieBoxes!</h1>
-<% end %>
-
+   <style>
+body  {
+  background-image: url(/assets/4JlpQn.jpg/);
+  
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  text-align: center;
+  display: block;
+  color: black;
+  height: 100vh;
+  
+}
+</style>
 <% content_for :vertical_nav do %>
   <ul class="nav flex-column">
     <li class="nav-item mb-3">
-      <%= button_to "Create a new MovieBox", new_user_moviebox_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
+      <%= button_to "Create a new MovieBox", new_user_moviebox_path(current_user), :method => "get", class: "btn btn-dark btn-block" %>
     </li>
     <li class="nav-item mb-3">
-      <%= button_to "Add a Movie", movies_path, :method => "get", class: "btn btn-info btn-block" %>
+      <%= button_to "Add Movies To Your MovieBox", movies_path, :method => "get", class: "btn btn-dark btn-block" %>
     </li>
+        <li class="nav-item mb-3">
+        <%= button_to "Favorite Movies", user_movies_path(current_user), :method => "get", class: "btn btn-dark btn-block" %>
+        <li>
   </ul>
 <% end %>
 
 <% content_for :content do %>
   <% if @movieboxes.count == 0 %>
-    <p><center>You don't have any movieboxes! <%= link_to "Create One", new_user_moviebox_path(current_user) %> to start adding movies!</center></p>
+    <p><strong><center>You don't have any movieboxes! <%= link_to "Create One", new_user_moviebox_path(current_user) %> to start adding movies!</center></p></strong>
   <% else %>
     <% @movieboxes.each do |moviebox| %>
-      <div class="card border-info mb-3">
+    <div class="row">
+        <div class="col-auto mb-3">
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <img class="card-img-top" src="https://images.freecreatives.com/wp-content/uploads/2017/10/flat-clapperboard-icon_1063-38.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title"><%= link_to moviebox.name, user_moviebox_path(current_user, moviebox) %></h5>
           <p class="card-text"><%= moviebox.description %></p>
         </div>
+    </div>
       </div>
     <% end %>
   <% end %>
 <% end %>
 
-<% content_for :sidebar do %>
-  <p>Favorite Movies</p>
-  <% @favorites.each do |show| %>
-    <p> <%= link_to movie.title, movie_path(movie) %></p>
-  <% end %>
-  <%= button_to "See All of My Movies", user_movies_path(current_user), :method => "get", class: "btn btn-info" %>
-<% end %>
 

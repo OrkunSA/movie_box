@@ -1,14 +1,10 @@
-<% content_for :header do %>
-  <h1><%= link_to "Browse Movies", movies_path %></h1>
-<% end %>
-
 <% content_for :vertical_nav do %>
 <ul class="nav flex-column">
   <li class="nav-item mb-3">
-    <%= button_to "Add New Movie", new_movie_path, :method => "get", class: "btn btn-info btn-block" %>
+    <%= button_to "Add a New Movie To Database", new_movie_path, :method => "get", class: "btn btn-dark btn-block" %>
   </li>
   <li class="nav-item">
-    <%= button_to "Back to my Movieboxes", user_movieboxes_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
+    <%= button_to "Back to my Movieboxes", user_movieboxes_path(current_user), :method => "get", class: "btn btn-dark btn-block" %>
   </li>
 </ul>
 <% end %>
@@ -23,4 +19,4 @@
     <%= button_to "Genre", genres_path, :method => "get", class: "btn btn-outline-secondary" %>
      </div>
       </p>
-      <% end %>
+<% end %>
