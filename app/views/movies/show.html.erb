@@ -1,5 +1,3 @@
-
-
 <% content_for :vertical_nav do %>
   <ul class="nav flex-column">
     <li class="nav-item mb-3">
@@ -20,7 +18,6 @@
   <p><strong>Director</strong>: <%= @movie.director%></p>
   <p><strong>Year</strong>: <%= @movie.year%></p>
   <p><strong>Genres</strong>: <%= @movie.genres.map { |genre| link_to(genre.name, genre_path(genre)) }.join(', ').html_safe %></p>
-  
 <% end %>
 
 <% content_for :sidebar do %>
