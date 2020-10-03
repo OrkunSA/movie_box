@@ -6,13 +6,13 @@ The application helps you keep track of your favorite movies, and create lists t
 
 To get started with the app, clone the repo and then install the needed gems:
 
-$ bundle install
+`$ bundle install`
 
 Next, migrate the database:
 
-$ rake db:migrate
+`$ rake db:migrate`
 
 Then run the app in a local server:
 
-$ rails s
+`$ rails s`
 
