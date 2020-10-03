@@ -5,5 +5,4 @@ class Listing < ApplicationRecord
 
     validates :moviebox_id, uniqueness: { scope: :movie_id }, :on => :create
     
-
 end
