@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :listings, except: [:index, :destroy]
   end
 
+
   resources :genres, only: [:index, :show]
 
   get '/auth/google/callback', to: 'users#google_login'
