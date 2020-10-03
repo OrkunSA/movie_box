@@ -1,24 +1,18 @@
-# README
+# MovieBox
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The application helps you keep track of your favorite movies, and create lists to manage and organize those movies. 
 
-Things you may want to cover:
+## Install Instructions
 
-* Ruby version
+To get started with the app, clone the repo and then install the needed gems:
 
-* System dependencies
+$ bundle install
 
-* Configuration
+Next, migrate the database:
 
-* Database creation
+$ rake db:migrate
 
-* Database initialization
+Then run the app in a local server:
 
-* How to run the test suite
+$ rails s
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
