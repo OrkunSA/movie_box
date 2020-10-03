@@ -9,7 +9,7 @@ class UsersController < ApplicationController
             @user = User.new 
         end
     end
-
+    
     def google_login
         @user = User.find_by(email: auth[:info][:email])
     
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
           session[:user_id] = @user.id
           redirect_to user_movieboxes_path(@user)
         else
-          render :new
+          redirect_to new_user_path(@user)
         end
     end
 
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
             render :new 
         end
     end
-
+    
     def show 
         @user = current_user
         if logged_in?

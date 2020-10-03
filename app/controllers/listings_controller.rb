@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
         @listing = Listing.new(listing_params)
         @listing.movie = Movie.find_by(id: params[:movie_id])
         if @listing.save
-            flash[:message] = "#{@listing.movie.title} has been added to your watchlist"
+            flash[:message] = "#{@listing.movie.title} has been added to your moviebox"
             redirect_to movie_path(@listing.movie)
         else
             render :new 
@@ -22,7 +22,7 @@ class ListingsController < ApplicationController
     end
 
     def update 
-        @listing.movie(listing_params)
+        @listing.update(listing_params)
         if @listing.save
             flash[:message] = "#{@listing.movie.title} listing has been updated"
             redirect_to movie_path(@listing.movie)
