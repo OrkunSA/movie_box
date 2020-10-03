@@ -1,7 +1,7 @@
 <% if @movie.errors.any? %>
   <div class="alert alert-danger" role="alert">
   <ul>
-  <%= @movie.errors.full_messages.each do |msg| %>
+  <% @movie.errors.full_messages.each do |msg| %>
     <li><%= msg %> </li>
    <% end %>
    </ul>
@@ -32,7 +32,6 @@
     <% end %>
   </div>
 
-  <%= f.hidden_field :created_by, value: current_user.id %>
   <%= f.submit class: "btn btn-primary" %>
 
   <% end %>
