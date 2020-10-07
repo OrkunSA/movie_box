@@ -1,24 +1,27 @@
-# README
+# MovieBox
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The application helps you keep track of your favorite movies, and create lists to manage and organize those movies. 
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+To get started with the app, clone the repo and then install the needed gems:
 
-* System dependencies
+`$ bundle install`
 
-* Configuration
+Next, migrate the database:
 
-* Database creation
+`$ rake db:migrate`
 
-* Database initialization
+Then run the app in a local server:
 
-* How to run the test suite
+`$ rails s`
 
-* Services (job queues, cache servers, search engines, etc.)
+## Contributing
 
-* Deployment instructions
+Bug reports and pull requests are welcome on GitHub at https://github.com/OrkunSA/movie_box.git. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
-* ...
+## License
+
+The gem is available as open source under the terms of the MIT License.
+
+
