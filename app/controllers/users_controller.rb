@@ -10,25 +10,6 @@ class UsersController < ApplicationController
         end
     end
     
-    def google_login
-        @user = User.find_by(email: auth[:info][:email])
-    
-        if @user.nil?
-          @user = User.new(
-            email: auth[:info][:email],
-            username: auth[:info][:name],
-            password: SecureRandom.urlsafe_base64
-          )
-        end
-    
-        if @user.save
-          session[:user_id] = @user.id
-          redirect_to user_movieboxes_path(@user)
-        else
-          redirect_to new_user_path(@user)
-        end
-    end
-
     def create 
         @user = User.create(user_params) 
         if @user.valid? 
@@ -52,6 +33,26 @@ class UsersController < ApplicationController
             redirect_to login_path
         end
     end
+    
+    def google_login
+        @user = User.find_by(email: auth[:info][:email])
+    
+        if @user.nil?
+          @user = User.new(
+            email: auth[:info][:email],
+            username: auth[:info][:name],
+            password: SecureRandom.urlsafe_base64
+          )
+        end
+        if @user.save
+          session[:user_id] = @user.id
+          redirect_to user_movieboxes_path(@user)
+        else
+          redirect_to new_user_path(@user)
+        end
+    end
+
+    
 
 
     
