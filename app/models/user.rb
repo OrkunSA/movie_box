@@ -6,7 +6,7 @@ class User < ApplicationRecord
     validates :username, presence: true 
     has_secure_password
 
-    def favorite_shows
+    def favorite_movies
         # List the user's movies where favorite is true
         self.movies.includes(:listings).where(:listings => { favorite: true }).uniq
     end
