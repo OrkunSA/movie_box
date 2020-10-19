@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
     def index 
         @user = User.find_by(id: params[:user_id])
         if @user 
-            @movies = @user.movies.uniq
+            @movies = @user.favorite_movies.uniq
         else
             @movies = Movie.all 
         end
