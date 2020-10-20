@@ -12,8 +12,11 @@ Rails.application.routes.draw do
   end
 
 
-  resources :genres, only: [:index, :show]
-
+  resources :genres, only: [:index, :show] do 
+    resource :movies, except: [:show]
+  end
+  
+  get '/genres/:id/movies', to: "genres#show"
   get '/auth/google/callback', to: 'users#google_login'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

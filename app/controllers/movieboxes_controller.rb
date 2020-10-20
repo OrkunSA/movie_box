@@ -5,7 +5,7 @@ class MovieboxesController < ApplicationController
 
     def index 
         @movieboxes = current_user.movieboxes 
-        @favorites = current_user.favorite_movies 
+        @favorites = current_user.favorite_movies
     end
 
     def new 

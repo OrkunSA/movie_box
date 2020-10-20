@@ -13,7 +13,10 @@
         <th scope="row"><%= link_to movie.title, movie_path(movie) %></th>
         <td><%= movie.year %></td>
         <td><%= movie.director %></td>
-        <td><%= movie.genres.map { |genre| genre.name }.join(', ') %></td>
+        <td><% movie.genres.each do |genre| %>
+        <%= link_to genre.name, genre_movies_path(genre) %>
+       <% end %>
+    </td>
       </tr>
     <% end %>
   </tbody>

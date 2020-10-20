@@ -3,6 +3,5 @@ class Listing < ApplicationRecord
     belongs_to :movie 
     belongs_to :user 
 
-    validates :moviebox_id, uniqueness: { scope: :movie_id }, :on => :create
-    
+    validates :moviebox_id, uniqueness: { scope: :movie_id }
 end

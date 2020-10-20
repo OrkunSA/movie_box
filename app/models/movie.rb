@@ -16,8 +16,20 @@ class Movie < ApplicationRecord
         end
     end
 
+
     def movies_movieboxes_by_user(user_id)
         self.listings.where(user_id: user_id)
     end
+
+    def self.favorites
+        includes(:listings).where(:listings => { favorite: true })
+    end
+    
+
+    
+
+    # def self.favorite
+    #   User.self.includes(:listings).where(:listings => { favorite: true })
+    # end
     
 end

@@ -20,6 +20,7 @@
   <p><strong>Genres</strong>: <%= @movie.genres.map { |genre| link_to(genre.name, genre_path(genre)) }.join(', ').html_safe %></p>
 <% end %>
 
+
 <% content_for :sidebar do %>
   <h4>My Moviesboxes</h4>
   <%= moviebox_options(@listings, @movie) %>
