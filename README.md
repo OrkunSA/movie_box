@@ -21,7 +21,8 @@ Then run the app in a local server:
 
 ## Demo
 
-https://youtu.be/9jX6Yq4Uht8
+[![DEMO](http://img.youtube.com/vi/9jX6Yq4Uht8/0.jpg)](http://www.youtube.com/watch?v=9jX6Yq4Uht8)
+
 
 ## Blog
 
