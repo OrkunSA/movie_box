@@ -23,6 +23,10 @@ Then run the app in a local server:
 
 https://youtu.be/9jX6Yq4Uht8
 
+## Blog
+
+https://medium.com/swlh/rails-project-moviebox-32193e5da2a7
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/OrkunSA/movie_box.git. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
