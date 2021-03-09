@@ -1,3 +1,6 @@
+![Movie Box](https://user-images.githubusercontent.com/63612622/110399222-11809f80-803b-11eb-95a3-3f026660c18b.png)
+
+
 # MovieBox
 
 The application helps you keep track of your favorite movies, and create lists to manage and organize those movies. 
@@ -15,6 +18,10 @@ Next, migrate the database:
 Then run the app in a local server:
 
 `$ rails s`
+
+## Demo
+
+https://youtu.be/9jX6Yq4Uht8
 
 ## Contributing
 
